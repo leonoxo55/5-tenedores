@@ -7,9 +7,6 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
-  {
-    asdasd
-  }
   "dependencies": {
     "expo": "~36.0.0",
     "react": "~16.9.0",

@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialCommunityIcons } from "react-native-vector-icons";
 
-import MyAccountScreen from "../screens/MyAccount";
+import MyAccountScreen from "../screens/Account/MyAccount";
 import RestaurantsScreen from "../screens/Restaurants";
 import SearchScreen from "../screens/Search";
 import TopRestaurantsScreen from "../screens/TopRestaurants";
@@ -15,10 +15,7 @@ const Stack = createStackNavigator();
 function TopRestaurantsStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Top 5 Restaurantes"
-        component={TopRestaurantsScreen}
-      />
+      <Stack.Screen name="TopRestaurants" component={TopRestaurantsScreen} />
     </Stack.Navigator>
   );
 }
@@ -26,7 +23,7 @@ function TopRestaurantsStack() {
 function RestaurantsStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Restaurantes" component={RestaurantsScreen} />
+      <Stack.Screen name="Restaurants" component={RestaurantsScreen} />
     </Stack.Navigator>
   );
 }
@@ -34,7 +31,7 @@ function RestaurantsStack() {
 function MyAccountStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Mi Cuenta" component={MyAccountScreen} />
+      <Stack.Screen name="Account" component={MyAccountScreen} />
     </Stack.Navigator>
   );
 }
@@ -42,7 +39,7 @@ function MyAccountStack() {
 function SearchStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Buscar" component={SearchScreen} />
+      <Stack.Screen name="Search" component={SearchScreen} />
     </Stack.Navigator>
   );
 }
@@ -50,7 +47,7 @@ function SearchStack() {
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator initialRouteName="Account">
         <Tab.Screen
           name="Restaurantes"
           component={RestaurantsStack}
@@ -103,5 +100,3 @@ export default function Navigation() {
     </NavigationContainer>
   );
 }
-
-import { Icon } from "react-native-elements";

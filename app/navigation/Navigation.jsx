@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -55,15 +55,53 @@ export default function Navigation() {
           name="Restaurantes"
           component={RestaurantsStack}
           options={{
-            tabBarIcon: ({ color, size }) => {
-              <MaterialCommunityIcons name="home" color={color} size={size} />;
-            }
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            )
           }}
         />
-        <Tab.Screen name="Top 5 Restaurantes" component={TopRestaurantsStack} />
-        <Tab.Screen name="Buscar" component={SearchStack} />
-        <Tab.Screen name="Mi Cuenta" component={MyAccountStack} />
+        <Tab.Screen
+          name="Top 5 Restaurantes"
+          component={TopRestaurantsStack}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons
+                name="star-outline"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Buscar"
+          component={SearchStack}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons
+                name="magnify"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Mi Cuenta"
+          component={MyAccountStack}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons
+                name="account"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
+
+import { Icon } from "react-native-elements";

@@ -31,7 +31,7 @@ function RestaurantsStack() {
 function MyAccountStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Account" component={MyAccountScreen} />
+      <Stack.Screen name="Mi Cuenta" component={MyAccountScreen} />
     </Stack.Navigator>
   );
 }
@@ -47,7 +47,7 @@ function SearchStack() {
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Account">
+      <Tab.Navigator initialRouteName="Mi Cuenta">
         <Tab.Screen
           name="Restaurantes"
           component={RestaurantsStack}

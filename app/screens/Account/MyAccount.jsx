@@ -5,7 +5,7 @@ import Loading from "../../components/Loading";
 import UserGuest from "./UserGuest";
 import UserLogged from "./UserLogged";
 
-export default function MyAccount() {
+export default function MyAccount(props) {
   const [login, setLogin] = useState(null);
 
   useEffect(() => {
@@ -19,5 +19,5 @@ export default function MyAccount() {
     return <Loading isVisible={true} text="Cargando" />;
   }
 
-  return login ? <UserLogged /> : <UserGuest />;
+  return login ? <UserLogged /> : <UserGuest navigation={props.navigation} />;
 }

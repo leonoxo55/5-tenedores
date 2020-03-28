@@ -8,6 +8,7 @@ import MyAccountScreen from "../screens/Account/MyAccount";
 import RestaurantsScreen from "../screens/Restaurants";
 import SearchScreen from "../screens/Search";
 import TopRestaurantsScreen from "../screens/TopRestaurants";
+import LoginScreen from "../screens/Account/Login";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -32,6 +33,7 @@ function MyAccountStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Mi Cuenta" component={MyAccountScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
     </Stack.Navigator>
   );
 }
